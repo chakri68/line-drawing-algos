@@ -60,28 +60,27 @@ algorithms = [
     (Bresenham, "Bresenham", "yellow")
 ]
 
-# Create UI elements
+# Create UI elements and organize them in a grid layout
 x1_label = tk.Label(root, text="X1:")
-y1_label = tk.Label(root, text="Y1:")
-x2_label = tk.Label(root, text="X2:")
-y2_label = tk.Label(root, text="Y2:")
 x1_entry = tk.Entry(root)
+y1_label = tk.Label(root, text="Y1:")
 y1_entry = tk.Entry(root)
+x2_label = tk.Label(root, text="X2:")
 x2_entry = tk.Entry(root)
+y2_label = tk.Label(root, text="Y2:")
 y2_entry = tk.Entry(root)
 draw_button = tk.Button(root, text="Draw Line", command=draw_from_ui)
 exit_button = tk.Button(root, text="Exit", command=on_exit)
 
-# Pack UI elements
-x1_label.pack()
-x1_entry.pack()
-y1_label.pack()
-y1_entry.pack()
-x2_label.pack()
-x2_entry.pack()
-y2_label.pack()
-y2_entry.pack()
-draw_button.pack()
-exit_button.pack()
+x1_label.grid(row=0, column=0, pady=5, padx=5)
+x1_entry.grid(row=0, column=1, pady=5, padx=5)
+y1_label.grid(row=1, column=0, pady=5, padx=5)
+y1_entry.grid(row=1, column=1, pady=5, padx=5)
+x2_label.grid(row=2, column=0, pady=5, padx=5)
+x2_entry.grid(row=2, column=1, pady=5, padx=5)
+y2_label.grid(row=3, column=0, pady=5, padx=5)
+y2_entry.grid(row=3, column=1, pady=5, padx=5)
+draw_button.grid(row=4, columnspan=2, sticky=tk.W + tk.E, pady=5, padx=5)
+exit_button.grid(row=5, columnspan=2, sticky=tk.W + tk.E, pady=5, padx=5)
 
 root.mainloop()
